@@ -1,5 +1,7 @@
 package com.example.flixter.models;
 
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,6 +19,8 @@ public class Movie {
     String title;
     String overview;
     Double voteAvg;
+    Integer id;
+    String date;
 
     // no-arg, empty constructor required for Parceler
     public Movie() {}
@@ -27,6 +31,10 @@ public class Movie {
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         voteAvg = jsonObject.getDouble("vote_average");
+        id = jsonObject.getInt("id");
+        date = jsonObject.getString("release_date");
+        Log.i("Movie", "Release date: " + date);
+
 
     }
 
@@ -57,5 +65,13 @@ public class Movie {
     }
 
     public Double getVoteAverage() { return voteAvg; }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getReleaseDate() {
+        return date;
+    }
 }
 

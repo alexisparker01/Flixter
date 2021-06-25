@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.codepath.flicks.MovieDetailsActivity">
+    android:background="#111111"
+    tools:context=".MovieDetailsActivity">
 
     <TextView
         android:id="@+id/tvTitle"
@@ -12,25 +13,30 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_toRightOf="@id/ivMovieDetails"
+        android:fontFamily="sans-serif-light"
         android:text="Movie Title"
-        android:textAppearance="@android:style/TextAppearance.Large" />
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textColor="#FFFFFF" />
 
     <TextView
         android:id="@+id/tvOverview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
         android:layout_below="@+id/rbVoteAverage"
+        android:layout_alignParentEnd="true"
         android:layout_toRightOf="@id/ivMovieDetails"
-        android:layout_alignParentEnd="true" />
+        android:fontFamily="sans-serif-light"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
 
     <RatingBar
         android:id="@+id/rbVoteAverage"
         style="@style/Widget.AppCompat.RatingBar.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/ivMovieDetails"
         android:layout_below="@+id/tvTitle"
+        android:layout_toRightOf="@id/ivMovieDetails"
+        android:backgroundTint="#000000"
         android:numStars="5"
         android:stepSize="0.5" />
 
@@ -38,5 +44,34 @@
         android:id="@+id/ivMovieDetails"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
         tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/playBtn"
+        android:layout_alignEnd="@+id/ivMovieDetails"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="133dp"
+        android:layout_marginEnd="69dp"
+        android:backgroundTint="#FF0000"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        app:cornerRadius="100dp"
+        app:icon="@android:drawable/ic_media_play" />
+
+    <TextView
+        android:id="@+id/tvDateMovieDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvOverview"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/ivMovieDetails"
+        android:text="TextView"
+        android:textColor="#FFFFFF" />
 </RelativeLayout>
